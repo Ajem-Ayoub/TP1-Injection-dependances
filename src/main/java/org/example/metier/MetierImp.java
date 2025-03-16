@@ -1,17 +1,24 @@
 package org.example.metier;
 
+import org.example.dao.DaoImp;
 import org.example.dao.IDao;
 
 public class MetierImp implements IMetier {
-    // instanciation statique
-    private final IDao iDao;
+    private IDao idao;
 
-    public MetierImp(IDao iDao) {
-        this.iDao = iDao;
+    public MetierImp() {}
+
+    public MetierImp(IDao idao) {
+        this.idao = idao;
+    }
+
+    public void setIdao(IDao idao) {
+        this.idao = idao;
     }
 
     @Override
     public double calcul() {
-        return iDao.getData();
+        return idao.getData();
     }
+
 }
