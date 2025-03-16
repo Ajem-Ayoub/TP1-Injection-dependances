@@ -7,7 +7,8 @@
     <bean id="d" class="org.example.dao.DaoImp"/>
 
     <bean id="metier" class="org.example.metier.MetierImp">
-        <property name="idao" ref="d"/>
+    <!--<property name="idao" ref="d"/>-->
+        <constructor-arg ref="d"/>
     </bean>
 
 </beans>
